@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        sc.next();
+        
+        List<BigDecimal> list = new ArrayList<BigDecimal>(); 
+        
+        while (sc.hasNext()) {
+            list.add(new BigDecimal(sc.next()));
+        }
+        
+        Collections.sort(list, Collections.reverseOrder());
+        
+        for (BigDecimal dec : list) {
+            String decimal = dec.toPlainString();
+            System.out.println(decimal.replaceFirst("^0.", "."));
+        }
+        
+    }
+}
