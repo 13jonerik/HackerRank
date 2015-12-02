@@ -6,20 +6,21 @@ using namespace std;
 class ToPostfix {
     public:
 	ToPostfix(string input);
-	// processInput();
 	string getString();
-        void getPostfix();	
-	void readInput();
+        void getPostfixString();	
+	void readInputWrap();
+	void outputAnswer();
     private:
 	string input;
-	int operatorOrder(char token);
-	void execOperator(char token);
-	void execParenthesis();
 	stack<char> operatorStack;
 	vector<char> postfixExpr;
 
+	int operatorOrder(char token);
+	void execOperator(char token);
+	void execParenthesis();
+	void readInput();
+	int evaluateExpr();	
+	
 };
-
-
 
 
